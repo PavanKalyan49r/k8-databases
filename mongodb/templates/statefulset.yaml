@@ -20,7 +20,7 @@ spec:
         app: mongodb
         project: roboshop
         tier: db
-      spec:
+    spec:
       containers:
       - name: mongodb
         image: "pavan49r/mongodb:{{ .Values.statefulset.imageVersion }}"
