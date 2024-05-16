@@ -24,7 +24,7 @@ spec:
     spec:
       containers:
       - name: mysql
-        image: "pavan49r/mysql:{{ .Values.statefulset.imageVersion }}"
+        image: "joindevops/mysql:{{ .Values.statefulset.imageVersion }}"
         envFrom:
         - configMapRef:
             name: mysql
