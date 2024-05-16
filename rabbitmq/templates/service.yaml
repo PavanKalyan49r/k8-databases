@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: 
+  name: rabbitmq
   namespace: roboshop
   labels:
     app: rabbitmq
@@ -11,7 +11,7 @@ spec:
   ports:
   - protocol: TCP
     port: 5672 #service-port
-    targetPort: 5672 #container port
+    targetPort: 5672
   clusterIP: None
   selector:
     app: rabbitmq
