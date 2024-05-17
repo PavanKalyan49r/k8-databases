@@ -23,7 +23,7 @@ spec:
     spec:
       containers:
       - name: user
-        image: pavan49r/user:{{ .Values.deployment.imageVersion}}
+        image: "pavan49r/user:{{ .Values.deployment.imageVersion}}"
         imagePullPolicy: Always
         resources:
           requests:

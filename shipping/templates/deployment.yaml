@@ -1,30 +1,30 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cart
+  name: shipping
   namespace: roboshop
   labels: #this labels are deployment labels
-    app: cart
+    app: shipping
     project: roboshop
     tier: app
 spec:
   replicas: {{ .Values.deployment.replicas}}
   selector:
     matchLabels: #this labels are used to find the pods
-      app: cart
+      app: shipping
       project: roboshop
       tier: app
   template:
     metadata:
       labels: # these labels are pod labels
-        app: cart
+        app: shipping
         project: roboshop
         tier: app
     spec:
       containers:
-      - name: cart
-        image: "pavan49r/cart:{{ .Values.deployment.imageVersion }}"
+      - name: shipping
+        image: "pavan49r/shipping:{{ .Values.deployment.imageVersion}}"
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
-            name: cart
+            name: shipping
